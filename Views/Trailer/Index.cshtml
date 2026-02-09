@@ -1,0 +1,12 @@
+﻿<div class="main">
+    <div class="trailer_container">
+        @Html.ActionLink("Главная", "Index", "Film", null, new { @class = "trailer_link" })
+        <iframe width="1000"
+                height="600"
+                src="@ViewData["trailerLink"]"
+                title="YouTube video player"
+                frameborder="0"
+                allowfullscreen>
+        </iframe>
+    </div>
+</div>

@@ -1,0 +1,41 @@
+﻿@model IEnumerable<mvc.Film>
+<div class="main">
+    @if (!Model.Any())
+    {
+        <div class="alert alert-info">
+            Список пуст.
+        </div>
+    }
+    else
+    {
+        <div class="main_film_container">
+            <div class="film_wrap_container">
+        @foreach (var s in Model)
+        {
+            <div class="film_container">
+                @* <img class="poster_img" src="@s.Poster" /> *@
+                        <a asp-controller="Trailer"
+                           asp-action="Index"
+                           asp-route-link="@s.TrailerLink">
+                            <img class="poster_img" src="@s.Poster" />
+                        </a>
+                <div class="info_contsiner">
+                    <h1 class="film_name">@s.Name</h1>
+                    <p>Год выпуска: @s.Year</p>
+                    <p>Жанр: @s.Genre</p>
+                    <p>Описание: @s.Description</p>
+                    <p>Режисер: @s.Director</p>
+                    <div class="edit_bnts">
+                                <a asp-action="Edit" asp-route-id="@s.Id">Редактировать</a> 
+                                <a asp-action="Details" asp-route-id="@s.Id">Подробности</a> 
+                                <a asp-action="Delete" asp-route-id="@s.Id">Удалить</a>
+                    </div>
+                </div>
+            </div>
+        }
+            </div>
+
+            
+        </div>
+    }
+</div>

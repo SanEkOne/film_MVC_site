@@ -1,0 +1,109 @@
+body {
+    padding: 0;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+
+    h1 {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* современный шрифт */
+        font-size: 3rem; /* крупный размер для лого */
+        font-weight: 800; /* жирный */
+        background: linear-gradient(90deg, #DEDEDE, #B5B5B5); /* красивый градиент */
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent; /* текст через градиент */
+        text-transform: uppercase; /* все буквы заглавные */
+        letter-spacing: 3px; /* пространство между буквами */
+        text-shadow: 2px 2px 5px rgba(0,0,0,0.2); /* легкая тень для объема */
+        margin: 0;
+    }
+
+    a {
+        text-decoration: none;
+        color: white;
+        margin-left: 10px;
+    }
+}
+
+.main_film_container {
+    margin-top: 20px;
+    border-radius: 10px;
+    padding: 20px;
+    background-color: #242424;
+    width: auto;
+}
+
+.poster_img {
+    width: 300px;
+    height: 450px;
+    object-fit: cover;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.film_wrap_container {
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.film_container {
+    display: flex;
+    background-color: #333;
+    border-bottom: 1px solid gray;
+    padding: 20px;
+    color: white;
+}
+
+.info_contsiner {
+    display: flex;
+    flex-direction: column;
+    padding-left: 20px;
+}
+
+.film_name {
+    font-size: 24px;
+}
+
+
+.trailer_link {
+    width: 85px;
+    display: inline-flex;
+    align-items: center;
+    padding: 10px;
+    background-color: #f0f0f0;
+    color: black;
+    font-weight: 500;
+    text-decoration: none;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+}
+
+.trailer_container {
+    margin-top: 20px;
+    padding: 40px;
+    background-color: #333;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+}
+
+.edit_bnts {
+    margin-top: 185px;
+    a {
+        text-decoration: none;
+        color: white;
+        margin-left: 10px;
+    }
+}
