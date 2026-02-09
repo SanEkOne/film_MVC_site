@@ -13,9 +13,9 @@ namespace mvc.Controllers
     {
         private readonly FilmContext _context;
 
-        public FilmController(FilmContext context)
+        public FilmController(FilmContext film)
         {
-            _context = context;
+            _context = film;
         }
 
         // GET: Student
@@ -32,14 +32,14 @@ namespace mvc.Controllers
                 return NotFound();
             }
 
-            var student = await _context.Films
+            var film = await _context.Films
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (student == null)
+            if (film == null)
             {
                 return NotFound();
             }
 
-            return View(student);
+            return View(film);
         }
 
         // GET: Student/Create
@@ -53,15 +53,15 @@ namespace mvc.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Name,Surname,Age,GPA")] Film student)
+        public async Task<IActionResult> Create([Bind("Id,Name,Director,Genre,Year,Poster,Description,TrailerLink")] Film film)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(student);
+                _context.Add(film);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(student);
+            return View(film);
         }
 
         // GET: Student/Edit/5
@@ -72,12 +72,12 @@ namespace mvc.Controllers
                 return NotFound();
             }
 
-            var student = await _context.Films.FindAsync(id);
-            if (student == null)
+            var film = await _context.Films.FindAsync(id);
+            if (film == null)
             {
                 return NotFound();
             }
-            return View(student);
+            return View(film);
         }
 
         // POST: Student/Edit/5
@@ -85,9 +85,9 @@ namespace mvc.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Surname,Age,GPA")] Film student)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Director,Genre,Year,Poster,Description,TrailerLink")] Film film)
         {
-            if (id != student.Id)
+            if (id != film.Id)
             {
                 return NotFound();
             }
@@ -96,12 +96,12 @@ namespace mvc.Controllers
             {
                 try
                 {
-                    _context.Update(student);
+                    _context.Update(film);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!StudentExists(student.Id))
+                    if (!StudentExists(film.Id))
                     {
                         return NotFound();
                     }
@@ -112,7 +112,7 @@ namespace mvc.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(student);
+            return View(film);
         }
 
         // GET: Student/Delete/5
@@ -123,14 +123,14 @@ namespace mvc.Controllers
                 return NotFound();
             }
 
-            var student = await _context.Films
+            var film = await _context.Films
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (student == null)
+            if (film == null)
             {
                 return NotFound();
             }
 
-            return View(student);
+            return View(film);
         }
 
         // POST: Student/Delete/5
@@ -138,10 +138,10 @@ namespace mvc.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var student = await _context.Films.FindAsync(id);
-            if (student != null)
+            var film = await _context.Films.FindAsync(id);
+            if (film != null)
             {
-                _context.Films.Remove(student);
+                _context.Films.Remove(film);
             }
 
             await _context.SaveChangesAsync();
