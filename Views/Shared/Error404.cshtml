@@ -1,0 +1,25 @@
+﻿@{
+    ViewData["Title"] = "Сторінку не знайдено — 404";
+    Layout = null; 
+}
+
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="~/css/site.css?v=1" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+</head>
+<body>
+
+    <div class="error_main_container">
+        <div class="error_container">
+        <h1 class="error">ERROR404</h1>
+        <p>Страницу не найдено!</p>
+        <a asp-controller="Film" asp-action="Index">На главную</a>
+        </div>
+    </div>
+</body>
+</html>

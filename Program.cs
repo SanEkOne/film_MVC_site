@@ -24,6 +24,11 @@ namespace mvc
 
             var app = builder.Build();
 
+
+            app.UseStaticFiles();
+            app.UseStatusCodePagesWithReExecute("/Error404");
+
+
             // обслуговуємо статичні файли з wwwroot
             app.UseStaticFiles();
 
