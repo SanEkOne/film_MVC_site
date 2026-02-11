@@ -12,15 +12,15 @@ header {
     justify-content: space-between;
 
     .logo {
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* современный шрифт */
-        font-size: 3rem; /* крупный размер для лого */
-        font-weight: 800; /* жирный */
-        background: linear-gradient(90deg, #DEDEDE, #B5B5B5); /* красивый градиент */
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+        font-size: 3rem; 
+        font-weight: 800; 
+        background: linear-gradient(90deg, #DEDEDE, #B5B5B5); 
         -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent; /* текст через градиент */
-        text-transform: uppercase; /* все буквы заглавные */
-        letter-spacing: 3px; /* пространство между буквами */
-        text-shadow: 2px 2px 5px rgba(0,0,0,0.2); /* легкая тень для объема */
+        -webkit-text-fill-color: transparent; 
+        text-transform: uppercase; 
+        letter-spacing: 3px; 
+        text-shadow: 2px 2px 5px rgba(0,0,0,0.2); 
         margin: 0;
     }
 
@@ -146,5 +146,23 @@ header {
 
     25%, 75% {
         opacity: 0;
+    }
+}
+
+
+.valid_error_message {
+    color: red;
+    font-size: 14px;
+    font-weight: bold;
+
+    opacity: 0;
+    transform: translateY(10px);
+    animation: fadeInAnimation 0.8s ease-out forwards;
+}
+
+@keyframes fadeInAnimation {
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
